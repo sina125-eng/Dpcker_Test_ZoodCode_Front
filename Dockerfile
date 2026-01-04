@@ -1,4 +1,5 @@
 FROM node:18-alpine
+WORKDIR /usr/scr/
 COPY package.json .
 COPY yarn.lock .
 RUN yarn
