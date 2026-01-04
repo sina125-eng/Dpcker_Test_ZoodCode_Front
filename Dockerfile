@@ -1,19 +1,8 @@
-FROM node:18.6.0-alpine
-
-ARG REACT_APP_API_BASE_URL
-
-WORKDIR WORKDIR /Docker
-
+FROM node:18-alpine
 COPY package.json .
-
 COPY yarn.lock .
-
 RUN yarn
-
 COPY . .
-
 RUN yarn build
-
-RUN npm install -g serve
-
-ENTRYPOINT ['serve', '-s', 'build']
+RUN npm install serve
+CMD [ "serve", "-s", "build" ]
