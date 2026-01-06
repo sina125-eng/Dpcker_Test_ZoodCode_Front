@@ -6,4 +6,4 @@ RUN yarn
 COPY . .
 RUN yarn build
 RUN npm install serve
-CMD [ "serve", "-s", "build" ]
+CMD ["npx", "serve", "-s", "build"]
